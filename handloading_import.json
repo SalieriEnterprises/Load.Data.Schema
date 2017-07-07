@@ -1,0 +1,192 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "id": "http://salieri.com/handloading_import.json",
+  "items": {
+    "id": "/items",
+    "type": "object",
+    "properties": {
+      "bulletDesc": {
+        "description": "Multi-word bullet description",
+        "id": "/items/properties/bulletDesc",
+        "title": "Bullet Description",
+        "type": "string"
+      },
+      "bulletType": {
+        "description": "Optional bullet type, e.g., JHP, Wadcutter.",
+        "id": "/items/properties/bulletType",
+        "title": "Bullet Type",
+        "type": "string"
+      },
+      "bulletWeight": {
+        "description": "Bullet weight in grains.",
+        "id": "/items/properties/bulletWeight",
+        "title": "Bullet Weight",
+        "type": "integer"
+      },
+      "caliber": {
+        "description": "Caliber identifier.",
+        "id": "/items/properties/caliber",
+        "title": "Caliber",
+        "type": "string"
+      },
+      "diameter": {
+        "description": "Caliber diameter in inches.",
+        "id": "/items/properties/diameter",
+        "title": "Caliber diameter",
+        "type": "number"
+      },
+      "favorite": {
+        "description": "Boolean true if identifying as Favorite load.",
+        "id": "/items/properties/favorite",
+        "title": "Favorite Load",
+        "type": "boolean"
+      },
+      "g1": {
+        "description": "Optional Bullet G1 ballistic coefficient.",
+        "id": "/items/properties/g1",
+        "title": "G1 coefficient",
+        "type": "number"
+      },
+      "g7": {
+        "description": "Optional Bullet G7 ballistic coefficient.",
+        "id": "/items/properties/g7",
+        "title": "G7coefficient",
+        "type": "number"
+      },
+      "id": {
+        "description": "Optional Load ID from export (ignored)",
+        "id": "/items/properties/id",
+        "title": "Load ID",
+        "type": "integer"
+      },
+      "oal": {
+        "description": "Cartridge Overall Length.",
+        "id": "/items/properties/oal",
+        "title": "OAL",
+        "type": "number"
+      },
+      "powderBrand": {
+        "description": "Powder Brand.",
+        "id": "/items/properties/powderBrand",
+        "title": "Powder Brand",
+        "type": "string"
+      },
+      "powderName": {
+        "description": "Powder Name.",
+        "id": "/items/properties/powderName",
+        "title": "Powder Name",
+        "type": "string"
+      },
+      "powderCharge": {
+        "description": "Powder charge, in grains.",
+        "id": "/items/properties/powderCharge",
+        "title": "Powder Charge",
+        "type": "number"
+      },
+      "powderMax": {
+        "description": "Boolean true if maximum powder charge.",
+        "id": "/items/properties/powderMax",
+        "title": "Max Powder charge",
+        "type": "boolean"
+      },
+      "primerBrand": {
+        "description": "Optional Primer Brand.",
+        "id": "/items/properties/primerBrand",
+        "title": "Primer Brand",
+        "type": "string"
+      },
+      "primerSize": {
+        "description": "Optional Primer Size.",
+        "id": "/items/properties/primerSize",
+        "title": "Primer Size",
+        "type": "string"
+      },
+      "referrer": {
+        "description": "Load creator/editor.",
+        "id": "/items/properties/referrer",
+        "title": "Load Creator",
+        "type": "string"
+      },
+      "rifle": {
+        "description": "Boolean true if this is a rifle caliber.",
+        "id": "/items/properties/rifle",
+        "title": "Rifle indicator",
+        "type": "boolean"
+      },
+      "systemValue": {
+        "description": "Boolean true if this is a load provided by the system.  SHOULD ALWAYS BE FALSE.",
+        "id": "/items/properties/systemValue",
+        "title": "System provided load",
+        "type": "boolean"
+      },
+      "velocity": {
+        "description": "Optional load velocity.",
+        "id": "/items/properties/velocity",
+        "title": "Velocity",
+        "type": "integer"
+      },
+      "ballistics": {
+        "id": "/items/properties/ballistics",
+        "type": "array",
+        "items": {
+          "id": "/items/properties/ballistics/items",
+          "type": "object",
+          "properties": {
+            "barrelDesc": {
+              "description": "Optional description of barrel used to capture data.",
+              "id": "/items/properties/ballistics/items/properties/barrelDesc",
+              "title": "Barrel Description",
+              "type": "string"
+            },
+            "entryCount": {
+              "description": "Number of rounds of this entry.",
+              "id": "/items/properties/ballistics/items/properties/entryCount",
+              "title": "Round count",
+              "type": "integer"
+            },
+            "entryDate": {
+              "description": "Timestamp (Unix ms) of this entry.",
+              "id": "/items/properties/ballistics/items/properties/entryDate",
+              "title": "Entry date",
+              "type": "integer"
+            },
+            "loadId": {
+              "description": "Load ID. IGNORED.",
+              "id": "/items/properties/ballistics/items/properties/loadId",
+              "title": "Load ID",
+              "type": "integer"
+            },
+            "max": {
+              "description": "Maximimum captured velocity.",
+              "id": "/items/properties/ballistics/items/properties/max",
+              "title": "Max velocity",
+              "type": "integer"
+            },
+            "mean": {
+              "description": "Mean/average captured velocity.",
+              "id": "/items/properties/ballistics/items/properties/mean",
+              "title": "Mean velocity",
+              "type": "number"
+            },
+            "min": {
+              "description": "Minimum captured velocity.",
+              "id": "/items/properties/ballistics/items/properties/min",
+              "title": "Min velocity",
+              "type": "integer"
+            },
+            "stdDev": {
+              "description": "Standard Deviation across captured velocities.",
+              "id": "/items/properties/ballistics/items/properties/stdDev",
+              "title": "Standard Deviation",
+              "type": "number"
+            }
+          },
+          "required" : ["entryCount", "entryDate", "max", "mean", "min", "stdDev"]
+        }
+      }
+    },
+    "required" : ["bulletDesc", "bulletWeight", "caliber", "diameter", "favorite", "oal", "powderBrand", "powderCharge", "powderMax", "powderName", "referrer", "rifle"]
+  },
+  "type": "array"
+}
